@@ -1,0 +1,34 @@
+CONTRAST PICARRO processing notes
+(for Lisa Kaser's version of the code)
+
+matlab in-field processing:
+
+Start matlab remotely from barolo
+copy data files to barolo
+matlab -nodisplay -r <scriptname without the .m>
+
+load_picarro_data.m
+- change research flight number, day of flight
+- run and select *all* files (change path) from Private dir (HDF5 files)
+- make RF09_PICARRO_data.mat
+
+water should be under 0.1 if we are NOT in the boundary layer - if it's higher, we need to dry the desiccant.
+
+contrast_read_netcdf_hires.m
+- to read in CO data from .nc file Lou creates
+- manually change RF number in several places
+- manually change date
+- run and select RF09 .nc file
+- creates RF09_CO_data.mat
+
+combine_CO_PICARRO_DATA_forRF09.m
+- change RF #'s and dates
+- run one chunk at a time, look at figures to make changes as you go
+- writes RF09_forICARTT_data.mat
+
+ICARTT_for_CONTRAST_2.m
+- Uses Andy Weinheimer's data just to plot something in the end (can comment it out if you don't have it)
+- change flight numbers and dates
+- select RF09_forICARTT_data.mat
+- Makes the final .ict file
+- then go back in change pdf to fig to save .fig matlab files
