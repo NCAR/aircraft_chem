@@ -1,0 +1,8 @@
+There are some functions inside these which are in other files, but at the
+moment I do not remember which they are.  These may also need the 3
+toolboxes we purchase with our licenses: statistics, signal processing, and
+mapping.  The nomadsIFPcoFinal.m file contains the main program, the
+*FlightParameters.m file handles a big chunk of the flight specific
+configurations.
+
+
