@@ -1,0 +1,191 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww21820\viewh13320\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 load WECANrf03.mat\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 vxlT=dat.STRONG_VXL2.data(goodTime);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>76100&rafTime<76900);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>79500&rafTime<81000);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>74000&rafTime<74100);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+save WECANrf03.mat\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 clear all; close all\
+load WECANrf02.mat\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 vxlT=dat.STRONG_VXL2.data(goodTime);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>75500&rafTime<75800);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>79000&rafTime<80000);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>88200&rafTime<89600);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>88250&rafTime<88600);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+save WECANrf02.mat\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 clear all; close all\
+load WECANrf01.mat\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 vxlT=dat.STRONG_VXL2.data(goodTime);\
+corrIx=find(rafTime>80000&rafTime<83000);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+corrIx=find(rafTime>71100&rafTime<71500);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>84000&rafTime<84800);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>84100&rafTime<84250);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>78400&rafTime<78600);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>86400&rafTime<87200);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 save WECANrf01.mat\
+\
+clear all; close all\
+load WECANrf04.mat\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 vxlT=dat.STRONG_VXL2.data(goodTime);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>72500&rafTime<72600);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>73800&rafTime<74100);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>79300&rafTime<79700);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>78700&rafTime<79000);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>82400&rafTime<82600);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>95200&rafTime<95320);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 save WECANrf04.mat\
+\
+clear all; close all\
+load WECANrf05.mat\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 vxlT=dat.STRONG_VXL2.data(goodTime);\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 figure,plot(rafTime,h2o_pic2401,'b.',rafTime,vxlT,'r.');\
+grid\
+corrIx=find(rafTime>70800&rafTime<71200);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 corrIx=find(rafTime>85000&rafTime<85200);\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+corrIx=find(rafTime>76200&rafTime<76600);\
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);\
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;\
+save WECANrf05.mat\
+}

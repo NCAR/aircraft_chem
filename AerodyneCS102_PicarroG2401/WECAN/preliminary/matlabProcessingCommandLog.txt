@@ -1,0 +1,926 @@
+cd ../../2018wecan
+cd ../..
+ls
+pwd
+cd ../2018wecan
+ls
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+calIx
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+calIx(1)
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+help if
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+figure,plot(rafTime,n2o_ari);
+figure,plot(rafTime,co2_pic2401out);
+figure,plot(rafTime,co2_pic2401out,'b.');ylim([390,500]);
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+%-- 10/4/18, 10:37 AM --%
+pwd
+cd ../2018wecan/ifpRAF/
+cd picarro/
+cd private/
+ls
+cd july
+ls
+cd 13
+ls
+cd Picarro/G2000/
+ls
+cd Log/DataLogger/
+ls
+cd DataLog_Private/
+pwd
+privPath=ans
+privPath
+ls
+clear all; close all
+pwd
+cd ../../../../
+pwd
+cd ../../
+pwd
+cd ../../
+pwd
+cd ..
+ls
+ls *.mat
+load WECANrf01.mat
+figure,plot(rafTime,co2_pic2401out,'b.'.rafTime,rafAlt,'r.');
+figure,plot(rafTime,co2_pic2401out,'b.',rafTime,rafAlt,'r.');
+figure,plot(rafTime,rafAlt)
+figure,plot(rafTime,co_ari_out);
+figure,plot(rafTime,co2_pic2401_corr)
+toffset_rel= 75301 - 75296;
+toffset_rel
+save WECANrf01.mat
+clear all; close all
+ls *.mat
+load WECANrf02.mat
+figure,plot(rafTime,rafAlt)
+figure,plot(rafTime,co2_pic2401_corr)
+figure,plot(rafTime,co_ari_out);
+corrIx=find(rafTime>75500&rafTime<75800);
+instcl=spec_corrlag(co2_pic2401_corr(corrix),co_ari_out(corrix),1,80);
+instcl=spec_corrlag(co2_pic2401_corr(corrIx),co_ari_out(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+dp=dat.DPXC.data;
+mr=dat.MR.data;
+mr_ppm=mr.*1608;
+h2o_ari_ppm=h2o_ari./1000;
+h2o_pic2401_ppm=h2o_pic2401./10000;
+figure,plot(rafTime,mr_ppm,'b.',rafTime,h2o_ari_ppm,'r.',rafTime,h2o_pic2401_ppm,'g.');
+mr=dat.MR.data(goodTime);
+dp=dat.DPXC.data(goodTime);
+mr_ppm=mr.*1608;
+figure,plot(rafTime,mr_ppm,'b.',rafTime,h2o_ari_ppm,'r.',rafTime,h2o_pic2401_ppm,'g.');
+h2o_ari_ppm(1:10)
+h2o_ari(1:10)
+h2o_pic2401(1:10)
+figure,plot(rafTime,mr_ppm,'b.',rafTime,h2o_ari,'r.',rafTime,h2o_pic2401,'g.');
+instcl=spec_corrlag(h2o_pic2401(corrIx),h2o_ari(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+figure,plot(rafTime(corrIx),mr_ppm(corrIx),'b.',rafTime(corrIx),h2o_ari(corrIx),'r.',rafTime(corrIx),h2o_pic2401(corrIx),'g.');
+corrIx=find(rafTime>79700&rafTime<80000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),h2o_ari(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>88200&rafTime<89600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>88250&rafTime<88600);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf01.mat
+del WECANrf01.mat
+delete WECANrf01.mat
+save WECANrf02.mat
+clear all; close all
+wecanPrelimFileWrite
+dp=dat.DPXC.data(goodTime);
+mr=dat.MR.data(goodTime);
+mr_ppm=mr.*1608;
+figure,plot(rafTime,mr_ppm,'b.',rafTime,h2o_ari_ppm,'r.',rafTime,h2o_pic2401_ppm,'g.');
+figure,plot(rafTime(corrIx),mr_ppm(corrIx),'b.',rafTime(corrIx),h2o_ari(corrIx),'r.',rafTime(corrIx),h2o_pic2401(corrIx),'g.');
+figure,plot(rafTime,mr_ppm,'b.',rafTime,h2o_ari,'r.',rafTime,h2o_pic2401,'g.');
+corrIx=find(rafTime>71100&rafTime<71500);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>84000&rafTime<84800);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>84100&rafTime<84250);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>78400&rafTime<78600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>86400&rafTime<87200);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf01.mat
+clear all; close all
+load WECANrf03.mat
+dp=dat.DPXC.data(goodTime);
+mr=dat.MR.data(goodTime);
+mr_ppm=mr.*1608;
+figure,plot(rafTime,mr_ppm,'b.',rafTime,h2o_ari,'r.',rafTime,h2o_pic2401,'g.');
+grid
+corrIx=find(rafTime>74000&rafTime<74100);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>76100&rafTime<76900);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>79500&rafTime<81000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>92200&rafTime<93200);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>87800&rafTime<89600);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf03.mat
+clear all; close all
+load WECANrf04.mat
+dp=dat.DPXC.data(goodTime);
+mr=dat.MR.data(goodTime);
+mr_ppm=mr.*1608;
+figure,plot(rafTime,mr_ppm,'b.',rafTime,h2o_ari,'r.',rafTime,h2o_pic2401,'g.');
+corrIx=find(rafTime>73800&rafTime<74100);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(rafTime,mr_ppm,'b.',rafTime,h2o_ari,'r.',rafTime,h2o_pic2401,'g.');
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>79300&rafTime<79700);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>78700&rafTime<79000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>87000&rafTime<89000);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>82400&rafTime<82600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>89200&rafTime<89600);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>94400&rafTime<94800);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+uvh=dat.UVH.data
+nc_dump
+help nc_dump
+nc_dump(ncfile)
+uvh=dat.XSIGV_UVH.data
+figure,plot(rafTime,uvh);
+uvh=dat.XSIGV_UVH.data(goodTime)
+figure,plot(rafTime,uvh);
+corrIx=find(rafTime>72500&rafTime<72600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(rafTime,uvh);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>95200&rafTime<95320);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf04.mat
+clear all; close all
+load WECANrf04.mat
+month
+day
+cd Picarro/G2000/
+pwd
+ls
+cd picarro/G2000/
+cd picarro/
+ls
+d private
+cd private
+ls
+help doy_start
+edit doy_start
+ls
+cd july
+ls
+cd 31
+ls
+cd 31
+ls
+pwd
+cd ../../../
+ls
+cd user
+ls
+rafTime(1)
+rafTime(end)
+95327./86400
+72214./86400
+*24
+0.8358.*24
+ls
+pwd
+cd rf04
+ls
+pwd
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+ls
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+help mkdir
+clear all; close all
+onlyLoadPic2401userFiles
+pwd
+ls
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+textdata
+textdata(1:30)
+textdata'(1:30)
+textdata(1:30)'
+textdata(,1:30)'
+textdata[,1:30]'
+textdata[,1:30]
+textdata{,1:30}
+textdata{1,1:30}
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+figure,plot(picTimeUsr2401,UsrCo2_dry2401,'b.');
+figure,plot(UsrFracJulianDay2401,UsrCo2_dry2401,'b.');
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+figure,plot(picTimeUsr2401,UsrCo2_dry2401,'b.');
+ck
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+onlyLoadPic2401userFiles
+figure,plot(picTimeUsr2401,UsrCo2_dry2401,'b.');
+clear all; close all
+onlyLoadPic2401userFiles
+clear all; close all
+pwd
+cd ../rf03
+ls
+load 20180730__rawPic2401User.mat
+char(fltno)
+fltno
+char(fltnoLC)
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+slash
+picPath2401
+clear all; close all
+wecanPrelimFileWrite
+fid4
+outfile4
+pwd
+clear all; close all
+wecanPrelimFileWrite
+pwd
+outfile4
+ls ict
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+wecanPrelimFileWrite
+figure,plot(rafTime,raf_co2c_pic2401,'b.',rafTime,co2c_pic2401,'r.');
+figure,plot(rafTime,co2c_pic2401,'r.');
+figure,plot(picTimeUsr2401,UsrCo2_dry2401);
+co2c_pic2401 = interp1(picTimeUsr2401,UsrCo2_dry2401,rafTime);
+b=find(isnan(UsrCo2_dry2401)==1)
+max(co2c_pic2401)
+UsrFracJulianDay2401(1:10)
+clear all; close all
+wecanPrelimFileWrite
+dTotal2401User
+dTotal2401User(1,:)
+format long
+dTotal2401User(1,:)
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+picPath2401
+clear all; close all
+wecanPrelimFileWrite
+clear all; close all
+wecanPrelimFileWrite
+pwd
+ls *.mat
+load WECANrf03.mat
+corrIx=find(rafTime>79500&rafTime<81000);
+dp=dat.DPXC.data(goodTime);
+mr=dat.MR.data(goodTime);
+mr_ppm=mr.*1608;
+save WECANrf03.mat
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>76100&rafTime<76900);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+figure,plot(rafTime(corrIx),h2o_pic2401(corrIx));
+figure,plot(rafTime(corrIx),mr_ppm(corrIx));
+figure,plot(rafTime,ch4_pic2401out,'b.');ylim([1700 3000]);
+figure,plot(rafTime,co2_pic2401out,'b.');ylim([390 500]);
+figure,plot(rafTime,co_pic2401out,'b.');ylim([0 10000]);
+figure,plot(rafTime,h2o_pic2401out,'b.');ylim([0 20000]);
+ch4c_pic2401(1)
+ch4c_pic2401(1:100)
+UsrCh4_dry2401(1)
+rafTime(1)
+picTimeUsr2401(1)
+ix=find(rafTime==picTimeUsr2401)
+ix=find(rafTime=picTimeUsr2401)
+ix=find(rafTime=picTimeUsr2401(1))
+ix=find(rafTime==picTimeUsr2401(1))
+ix=find(rafTime==int(picTimeUsr2401(1)))
+ix=find(rafTime==round(picTimeUsr2401(1)
+ix=find(rafTime==round(picTimeUsr2401(1))
+ix=find(rafTime==round(picTimeUsr2401(1)))
+ch4(ix)
+ch4c_pic2401(ix)
+raf_ch4c_pic2401(1)
+raf_ch4c_pic2401(ix)
+UsrCh4_raw2401(1)
+UsrCh4_dry2401(1)
+UsrCo2_raw2401(1)
+UsrCo2_dry2401(1)
+UsrCo_raw2401(1)
+h2o_pic(ix)
+h2o_pic2401(ix)
+UsrH2o(1)
+raf_h2o_pic2401(ix)
+clear all; close all
+wecanPrelimFileWrite
+555.5./60
+pwd
+cd rf03
+ls *.mat
+load WECANrf03.mat
+corrIx=find(rafTime>76100&rafTime<76900);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>79500&rafTime<81000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>74000&rafTime<74100);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+clear all; close all
+load WECANrf02.mat
+corrIx=find(rafTime>75500&rafTime<75800);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>79000&rafTime<80000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>88200&rafTime<89600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>88250&rafTime<88600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+clear all; close all
+load WECANrf01.mat
+corrIx=find(rafTime>71100&rafTime<71500);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>84000&rafTime<84800);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>84100&rafTime<84250);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>78400&rafTime<78600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+f
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>86400&rafTime<87200);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+clear all; close all
+load WECANrf04.mat
+corrIx=find(rafTime>72500&rafTime<72600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>73800&rafTime<74100);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>79300&rafTime<79700);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>78700&rafTime<79000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>82400&rafTime<82600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>95200&rafTime<95320);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+clear all; close all
+load WECANrf05.mat
+figure,plot(rafTime,h2o_pic2401,'b.',rafTime,mr_ppm,'r.');
+grdi
+grid
+corrIx=find(rafTime>70800&rafTime<71200);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>85000&rafTime<85200);
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>70800&rafTime<71200);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>76200&rafTime<76600);
+instcl=spec_corrlag(h2o_ari(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),mr_ppm(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+clear all; close all
+load WECANrf01.mat
+figure,plot(rafTime,h2o_pic2401,'b.',rafTime,mr_ppm,'r.');
+vxlT=dat.STRONG_VXL2.data;
+figure,plot(rafTime,h2o_pic2401,'b.',rafTime,vxlT,'g.');
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.',rafTime,vxlT,'g.');
+grid
+corrIx=find(rafTime>80000&rafTime<83000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+clear all; close all
+load WECANrf03.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+corrIx=find(rafTime>76100&rafTime<76900);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>79500&rafTime<81000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>74000&rafTime<74100);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf03.mat
+clear all; close all
+load WECANrf02.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+corrIx=find(rafTime>75500&rafTime<75800);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>79000&rafTime<80000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>88200&rafTime<89600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>88250&rafTime<88600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf02.mat
+clear all; close all
+load WECANrf01.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+corrIx=find(rafTime>80000&rafTime<83000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>71100&rafTime<71500);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>84000&rafTime<84800);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>84100&rafTime<84250);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>78400&rafTime<78600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>86400&rafTime<87200);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf01.mat
+clear all; close all
+load WECANrf04.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+corrIx=find(rafTime>72500&rafTime<72600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>73800&rafTime<74100);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>79300&rafTime<79700);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>78700&rafTime<79000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>82400&rafTime<82600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>95200&rafTime<95320);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf04.mat
+clear all; close all
+load WECANrf05.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.',rafTime,vxlT,'r.');
+grid
+corrIx=find(rafTime>70800&rafTime<71200);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>85000&rafTime<85200);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>76200&rafTime<76600);
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf05.mat
+clear all;close all
+load WECANrf06.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.',rafTime,vxlT,'r.');
+corrIx=find(rafTime>78600&rafTime<78800);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(rafTime,h2o_pic2401,'b.',rafTime,vxlT,'r.');
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>76000&rafTime<76600);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+corrIx=find(rafTime>80200&rafTime<81400);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf06.mat
+load WECANrf07.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.',rafTime,vxlT,'r.');
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>79200&rafTime<80800);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf07.mat
+clear all;close all
+load WECANrf08.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>80700&rafTime<80900);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf08.mat
+clear all;close all
+load WECANrf09.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>76900&rafTime<77300);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf09.mat
+clear all;close all
+load WECANrf10.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>78700&rafTime<79400);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+max(co_ari)
+save WECANrf10.mat
+clear all;close all
+load WECANrf11.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>81000&rafTime<81400);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf11.mat
+clear all;close all
+load WECANrf12.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>75000&rafTime<78000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf12.mat
+clear all;close all
+load WECANrf13.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>80500&rafTime<83000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf13.mat
+clear all;close all
+load WECANrf14.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+figure,plot(rafTime,co_pic2401,'b.');
+corrIx=find(rafTime>94000&rafTime<95000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf14.mat
+clear all;close all
+load WECANrf15.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+corrIx=find(rafTime>70600&rafTime<72000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),vxlT(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf15.mat
+clear all;close all
+load WECANrf16.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+uvh=dat.XSIGV_UVH.data;
+figure,plot(rafTime,uvh,'r.');
+uvh=dat.XSIGV_UVH.data(goodTime);
+figure,plot(rafTime,uvh,'r.');
+corrIx=find(rafTime>72400&rafTime<73000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf16.mat
+clear all;close all
+load WECANrf17.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+figure,plot(rafTime,vxlT,'r.');
+uvh=dat.XSIGV_UVH.data(goodTime);
+figure,plot(rafTime,uvh,'r.');
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(uvh,h2o_pic2401,'g.');
+corrIx=find(rafTime>66000&rafTime<67000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+dp=dat.DPXC.data(goodTime);
+figure,plot(rafTime,dp,'k.');
+corrIx=find(rafTime>65200&rafTime<66000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),dp(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),dp(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf17.mat
+clear all;close all
+load WECANrf18.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+dp=dat.DPXC.data(goodTime);
+uvh=dat.XSIGV_UVH.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,vxlT,'r.');
+figure,plot(rafTime,uvh,'r.');
+figure,plot(rafTime,dp,'k.');
+corrIx=find(rafTime>71500&rafTime<73000);
+instcl=spec_corrlag(h2o_pic2401(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),dp(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf18.mat
+clear all;close all
+wecanPrelimFileWrite
+load WECANrf19.mat
+vxlT=dat.STRONG_VXL2.data(goodTime);
+uvh=dat.XSIGV_UVH.data(goodTime);
+dp=dat.DPXC.data(goodTime);
+figure,plot(rafTime,h2o_pic2401,'b.');
+figure,plot(rafTime,uvh,'r.');
+corrIx=find(rafTime>71500&rafTime<73500);
+instcl=spec_corrlag(h2o_pic2401(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_ari(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf19.mat
+clear all;close all
+load WECANrf19.mat
+goodTime(1:10)
+goodTime(1:10)-10
+picTimeUsr2401(1:10)
+wecanPrelimFinal
+load WECANrf19.mat
+instcl=spec_corrlag(h2o_ari(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+instcl=spec_corrlag(h2o_pic2401(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+clear all;close all
+wecanPrelimFinal
+load WECANrf19.mat
+corrIx=find(rafTime>71500&rafTime<73500);
+instcl=spec_corrlag(h2o_ari(corrIx),uvh(corrIx),1,80);
+uvh=dat.XSIGV_UVH.data(goodTime);
+vxlT=dat.STRONG_VXL2.data(goodTime);
+dp=dat.DPXC.data(goodTime);
+save WECANrf19.mat
+instcl=spec_corrlag(h2o_ari(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+save WECANrf19.mat
+instcl=spec_corrlag(h2o_pic2401(corrIx),uvh(corrIx),1,80);
+figure,plot(instcl(:,1),instcl(:,2),'b*-'),grid;
+clear all;close all
+wecanPrelimFinal
+dat
+clear all;close all
+wecanPrelimFinal
+load WECANrf19.mat
+figure,plot(rafTime,ch4_pic2401out,'b.');ylim([1700 3000]);
+figure,plot(rafTime,co2_pic2401out,'b.');ylim([390 500]);
+figure,plot(rafTime,co_pic2401out,'b.');ylim([0 10000]);
+figure,plot(rafTime,h2o_pic2401out,'b.');ylim([0 20000]);
+figure,plot(rafTime,co_ari_out,'b.');ylim([0 10000]);
+figure,plot(rafTime,n2o_ari_out,'b.');ylim([0 500]);
+figure,plot(rafTime,h2o_ari_out,'b.');ylim([0 20000]);
+figure,plot(rafTime,uvh,'r.');
+figure,plot(rafTime,mr.*1608,'r.');
+figure,plot(rafTime,mr.*1608,'r.',rafTime,h2o_ari_out,'b.');
+figure,plot(rafTime,mr.*1608,'r.',rafTime,h2o_pic2401_out,'k.');
+figure,plot(rafTime,mr.*1608,'r.',rafTime,h2o_pic2401out,'k.');
+figure,plot(rafTime,h2o_pic2401,'r.',rafTime,raf_h2o_pic2401,'b.');
+figure,plot(rafTime,h2o_pic2401,'r.',rafTime-toffset_pic,raf_h2o_pic2401,'b.');
+grid
+figure,plot(rafTime,h2o_pic2401,'r.',rafTime+toffset_pic,raf_h2o_pic2401,'b.');grid
+clear all;close all
